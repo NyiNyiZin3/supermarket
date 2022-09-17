@@ -1,0 +1,42 @@
+<?php
+// phpcs:ignore
+namespace App\Models;
+
+use App\Models\Model;
+use DateTime;
+// phpcs:ignore
+class User extends Model {    
+    /**
+     * Construct
+     *
+     * @param string   $name       user name
+     * @param string   $password   password
+     * @param string   $email      email
+     * @param DateTime $created_at created time
+     * @param DateTime $updated_at update time
+     * 
+     * @return void
+     */
+    public function __construct( 
+        public string $name,
+        public string $email,
+        public string $password,
+        DateTime $created_at,
+        DateTime $updated_at,
+    ) {
+        parent::__construct($created_at, $updated_at);
+        $this->_save(); 
+    } 
+
+    /**
+     * Save to database
+     * get id
+     * set id
+     *
+     * @return void
+     */
+    private function _save(): void
+    {
+
+    }
+}
